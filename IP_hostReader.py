@@ -4,10 +4,10 @@ import os
 countryReader = geoip2.database.Reader('GeoLite2-Country.mmdb')
 asnReader = geoip2.database.Reader('GeoLite2-ASN.mmdb')
 
-university_sites = ["uct.ac.za", "wits.ac.za", "www.sun.ac.za", "uem.mz", "up.ac.mz",
-                    "ucm.ac.mz", "unam.edu.na", "ium.edu.na", "www.nust.na", "udsm.ac.tz",
-                    "aru.ac.tz", "sua.ac.tz", "univ-tlemcen.dz", "umc.edu.dz", "www.univ-alger.dz",
-                    "www.univ-ndere.cm", "www.univ-maroua.cm", "uy1.uninet.cm", "www.ucad.sn" , "ugb.sn" , "uadb.edu.sn"]
+university_sites = ["uct.ac.za", "wits.ac.za", "www.sun.ac.za", "mzuni.ac.mw", "unima.ac.mw",
+                    "unam.edu.na", "ium.edu.na", "www.nust.na", "udsm.ac.tz", "aru.ac.tz",
+                    "sua.ac.tz", "univh2c.ma", "uca.ma", "www.ump.ma", "www.univ-ndere.cm",
+                    "www.univ-maroua.cm", "uy1.uninet.cm","www.ucad.sn", "ugb.sn", "uadb.edu.sn"]
 
 uniData = {}
 
