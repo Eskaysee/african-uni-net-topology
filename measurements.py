@@ -97,7 +97,7 @@ for domainName in addresses:
 
     (is_success, response) = atlas_request.create()
 
-    print(f"Measurement test for {domainName}({str(addresses[domainName])})")
+    print(f"Ping & Traceroute measurements test for {domainName}({str(addresses[domainName])})")
     print("success? " + str(is_success))
     print("response: " + str(response))
     print("\n-------------------------------------------------------------------------------------\n")
