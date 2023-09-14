@@ -1,8 +1,8 @@
 pingTrace:
 	python3 measurements.py
 
-siteData:
-	python3 IP_hostReader.py
+results:
+	python3 results.py
 
 clear:
-	rm uniData*
+	rm -r results

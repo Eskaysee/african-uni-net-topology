@@ -11,6 +11,8 @@ addresses = IP_hostReader.uniData
 
 ATLAS_API_KEY = "ee507b44-4052-4c46-89f6-d8d4b447af4b"
 
+measurements = {}
+
 #Probes
 namibia = AtlasSource(
     type="country",
@@ -86,18 +88,24 @@ for domainName in addresses:
     )
 
     atlas_request = AtlasCreateRequest(
-        start_time=1694323800,
+        start_time = 1694323800,
         stop_time = 1694556000,
         key=ATLAS_API_KEY,
-        measurements=[ping, traceroute],
-        sources=[namibia, senegal, malawi, rsa, cameroon, tanzania, morocco],
-        is_oneoff=False,
+        measurements = [ping, traceroute],
+        sources = [namibia, senegal, malawi, rsa, cameroon, tanzania, morocco],
+        is_oneoff = False,
         bill_to = "sihlecalana@gmail.com"
     )
 
     (is_success, response) = atlas_request.create()
 
+    measurements[domainName] = response["measurements"]
+
     print(f"Ping & Traceroute measurements test for {domainName}({str(addresses[domainName])})")
     print("success? " + str(is_success))
-    print("response: " + str(response))
+    print("response: " + response)
     print("\n-------------------------------------------------------------------------------------\n")
+
+f = open("measurements.txt", "w")
+f.write(str(measurements))
+f.close()
