@@ -1,9 +1,6 @@
 import geoip2.database
 import os
 
-countryReader = geoip2.database.Reader('GeoLite2-Country.mmdb')
-asnReader = geoip2.database.Reader('GeoLite2-ASN.mmdb')
-
 university_sites = ["uct.ac.za", "wits.ac.za", "www.sun.ac.za", "unam.edu.na", "ium.edu.na",
                     "www.nust.na", "mzuni.ac.mw", "unima.ac.mw", "udsm.ac.tz", "aru.ac.tz",
                     "sua.ac.tz", "univh2c.ma", "uca.ma", "www.ump.ma", "www.univ-ndere.cm",
@@ -30,6 +27,8 @@ for site in university_sites:
 os.system("rm -r uniData")
 
 #Write the data to a CSV file
+countryReader = geoip2.database.Reader('GeoLite2-Country.mmdb')
+asnReader = geoip2.database.Reader('GeoLite2-ASN.mmdb')
 os.system("echo \"site,IP,country,asn\" > uniData.csv");
 file = open("uniData.csv", "a")
 for uni in uniData:
