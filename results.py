@@ -10,8 +10,9 @@ countries = {"ZA" : "South Africa", "NA" : "Namibia", "TZ" : "Tanzania", "MA": "
 def timeOday(utctime):
     morning = time(5,0,0)
     afternoon = time(13,0,0)
-    evening = time(23,0,0)
-    Mtime = datetime.fromtimestamp(utctime).time()
+    evening = time(21,0,0)
+    Mtime = datetime.utcfromtimestamp(utctime).time()
+    print("Time is", Mtime)
     if morning <= Mtime <= afternoon:
         return 0#'morning(05:30 GMT)'
     elif afternoon <= Mtime <= evening:
