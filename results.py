@@ -12,7 +12,6 @@ def timeOday(utctime):
     afternoon = time(13,0,0)
     evening = time(21,0,0)
     Mtime = datetime.utcfromtimestamp(utctime).time()
-    print("Time is", Mtime)
     if morning <= Mtime <= afternoon:
         return 0#'morning(05:30 GMT)'
     elif afternoon <= Mtime <= evening:
