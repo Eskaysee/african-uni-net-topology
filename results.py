@@ -2,7 +2,7 @@ from ripe.atlas.cousteau import (
     AtlasResultsRequest,
     Probe
 )
-import json, os, geoip2.database, statistics
+import json, os, geoip2.database, statistics, concurrent.futures
 from datetime import datetime, time
 
 countries = {"ZA" : "South Africa", "NA" : "Namibia", "TZ" : "Tanzania", "MA": "Morocco", "SN" : "Senegal", "MW" : "Malawi", "CM" : "Cameroon"}
@@ -22,6 +22,25 @@ def timeOday(utctime):
 
 def deadPackets(sent, received):
     return ((sent - received)/sent)*100
+
+def meanRTT(rtts):
+    #check for timed out or dead packets (ttl<=0)
+    i = 0
+    while i<len(rtts):
+        if rtts[i] == "*": del rtts[i]
+        else: i += 1
+    if rtts == []: return "timeout"
+    elif len(rtts) == 1: return rtts[0]
+    Q1 = statistics.quantiles(rtts, n=4, method="inclusive")[0]
+    Q3 = statistics.quantiles(rtts, n=4, method="inclusive")[2]
+    IQR = Q3 - Q1
+    lowerFence = Q1 - (1.5 * IQR)
+    upperFence = Q3 + (1.5 * IQR)
+    for rtt in rtts:
+        if rtt < lowerFence or rtt > upperFence:
+            rtts.remove(rtt)
+    #return the average
+    return statistics.mean(rtts)
 
 countryReader = geoip2.database.Reader('GeoLite2-Country.mmdb')
 asnReader = geoip2.database.Reader('GeoLite2-ASN.mmdb')
@@ -103,10 +122,20 @@ def pings(res1):
         avgRTT = data["avg"]
         date = str(datetime.fromtimestamp(data["timestamp"]).date())
         mTime = timeOday(data["timestamp"])
+        minRTT, maxRTT = data["min"], data["max"]
         try:
             packetLoss = f"{deadPackets(data['sent'], data['rcvd'])}%"
+            num = min(abs(avgRTT-minRTT),abs(maxRTT-avgRTT))
+            if (maxRTT > (avgRTT + 2*num) 
+                or minRTT < (avgRTT - 2*num)):
+                RTTs = []
+                for packet in data["result"]:
+                    RTTs.append(packet["rtt"])
+                avgRTT = meanRTT(RTTs)
         except ZeroDivisionError:
             packetLoss = "No Packets Sent"
+        except KeyError:
+            packetLoss = f"{deadPackets(data['sent'], data['rcvd'])}%"
         info = {"packet_loss": packetLoss, "average_RTT": avgRTT, "min_RTT": data["min"], "max_RTT": data["max"]}
         try:
             pingData[probeCountry][probe.id][date][mTime] = info
@@ -148,13 +177,17 @@ for uni in measurements:
     is_success, results = AtlasResultsRequest(**kwargs).create()
     res2 = json.loads(str(results).replace("'", "\""))
 
-    pingData, traceData = pings(res1), traces(res2)
+    executor = concurrent.futures.ThreadPoolExecutor(max_workers=2)
+    thread1 = executor.submit(pings, res1)
+    thread2 = executor.submit(traces, res2)
+
+    pingData, traceData = thread1.result(), thread2.result()
 
     pingf = open(f"results/{uni}/Ping.json", "w")
     if is_success:
         json.dump(pingData, pingf, indent=4)
     pingf.close()
-    
+
     tracef = open(f"results/{uni}/Traceroute.json", "w")
     if is_success:
         json.dump(traceData, tracef, indent=4)
