@@ -2,8 +2,9 @@ from ripe.atlas.cousteau import (
     AtlasResultsRequest,
     Probe
 )
-import json, os, geoip2.database, statistics, concurrent.futures
+import json, os, geoip2.database, statistics
 from datetime import datetime, time
+import concurrent.futures
 
 countries = {"ZA" : "South Africa", "NA" : "Namibia", "TZ" : "Tanzania", "MA": "Morocco", "SN" : "Senegal", "MW" : "Malawi", "CM" : "Cameroon"}
 
@@ -31,6 +32,7 @@ def meanRTT(rtts):
         else: i += 1
     if rtts == []: return "timeout"
     elif len(rtts) == 1: return rtts[0]
+    #remove outliers
     Q1 = statistics.quantiles(rtts, n=4, method="inclusive")[0]
     Q3 = statistics.quantiles(rtts, n=4, method="inclusive")[2]
     IQR = Q3 - Q1
@@ -48,12 +50,15 @@ asnReader = geoip2.database.Reader('GeoLite2-ASN.mmdb')
 def traces(res2):
     traceData = {}
     measrNo = 0
+    target = res2[0]["dst_addr"]
     for data in res2:
         if data["msm_name"] != "Traceroute": break
         probe = Probe(id=data["prb_id"])
         country = countries[probe.country_code]
+        isConnected = False
         asnPath = [probe.asn_v4]
         countryPath = [country]
+        IPs = [probe.address_v4]
         for hop in data["result"]:
             countryData, asnData = "", ""
             try:
@@ -65,6 +70,8 @@ def traces(res2):
                         ):
                             countryData = countryReader.country(packet["from"])
                             asnData = asnReader.asn(packet["from"])
+                            if packet["from"] not in IPs: IPs.append(packet["from"])
+                            if packet["from"] == target: isConnected = True
                     except KeyError:
                         if countryData == "" or asnData == "":
                             asnData = "N/A"
@@ -87,11 +94,13 @@ def traces(res2):
                 if asnData.autonomous_system_number != asnPath[-1]: asnPath.append(asnData.autonomous_system_number)
                 if countryData.country.name != countryPath[-1]: countryPath.append((countryData.country.name.strip()))
             elif countryData == "N/A" and asnData == "N/A":
-                if asnData != asnPath[-1]: asnPath.append(asnData)
+                pass
+            else:
+                if asnData != asnPath[-1] and asnData != "N/A": asnPath.append(asnData)
                 if countryData != countryPath[-1] and type(countryData)==type(""): countryPath.append(countryData)
         date = str(datetime.fromtimestamp(data["timestamp"]).date())
         mTime = timeOday(data["timestamp"])
-        info = {"AS_hops":len(asnPath), "countryHops":len(countryPath), "asn_path": asnPath, "country_path": countryPath}
+        info = {"AS_hops":len(asnPath)-1, "countryHops":len(countryPath)-1, "asn_path": asnPath, "country_path": countryPath, "Connected": isConnected, "IPs:": IPs}
         try:
             traceData[country][probe.id][date][mTime] = info
         except KeyError:
@@ -136,7 +145,7 @@ def pings(res1):
             packetLoss = "No Packets Sent"
         except KeyError:
             packetLoss = f"{deadPackets(data['sent'], data['rcvd'])}%"
-        info = {"packet_loss": packetLoss, "average_RTT": avgRTT, "min_RTT": data["min"], "max_RTT": data["max"]}
+        info = {"packet_loss": packetLoss, "average_RTT": avgRTT, "min_RTT": minRTT, "max_RTT": maxRTT}
         try:
             pingData[probeCountry][probe.id][date][mTime] = info
         except KeyError:
@@ -161,37 +170,45 @@ f = open("measurements.txt", "r")
 measurements = eval(str(f.read()))
 f.close()
 os.mkdir("results")
-
+progress = 0
 for uni in measurements:
+    path = (uni[-2:]).upper()
     print('\n', "uni:", uni, '\n')
     os.mkdir(f"results/{uni}")
     kwargs = {
         "msm_id": measurements[uni][0]
     }
-    is_success, results = AtlasResultsRequest(**kwargs).create()
+    is_success1, results = AtlasResultsRequest(**kwargs).create()
     res1 = json.loads(str(results).replace("'", "\""))
 
     kwargs = {
         "msm_id": measurements[uni][1]
     }
-    is_success, results = AtlasResultsRequest(**kwargs).create()
+    is_success2, results = AtlasResultsRequest(**kwargs).create()
     res2 = json.loads(str(results).replace("'", "\""))
 
     executor = concurrent.futures.ThreadPoolExecutor(max_workers=2)
+    
     thread1 = executor.submit(pings, res1)
     thread2 = executor.submit(traces, res2)
 
     pingData, traceData = thread1.result(), thread2.result()
 
-    pingf = open(f"results/{uni}/Ping.json", "w")
-    if is_success:
+    executor.shutdown()
+
+    pingf = open(f"result/{uni}/Ping.json", "w")
+    if is_success1:
         json.dump(pingData, pingf, indent=4)
     pingf.close()
-
-    tracef = open(f"results/{uni}/Traceroute.json", "w")
-    if is_success:
+    
+    tracef = open(f"result/{uni}/Traceroute.json", "w")
+    if is_success2:
         json.dump(traceData, tracef, indent=4)
     tracef.close()
+
+    progress+=1
+    percent = progress/len(measurements)*100
+    print(f"{progress}/{len(measurements)} ({percent}%) university measurements completed")
 
 countryReader.close()
 asnReader.close()
