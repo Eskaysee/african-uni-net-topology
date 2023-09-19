@@ -29,14 +29,10 @@ os.system("rm -r uniData")
 #Write the data to a CSV file
 countryReader = geoip2.database.Reader('GeoLite2-Country.mmdb')
 asnReader = geoip2.database.Reader('GeoLite2-ASN.mmdb')
-os.system("echo \"site,IP,country,asn\" > uniData.csv");
-file = open("uniData.csv", "a")
 for uni in uniData:
     countryData = countryReader.country(uniData[uni])
     asnData = asnReader.asn(uniData[uni])
-    file.write(uni + "," + uniData[uni] + "," + countryData.country.name + "," + str(asnData.autonomous_system_number) + "\n")
     print(uni + " has IP address " + uniData[uni] + " and the server is hosted in " + countryData.country.name + " with ASN " + str(asnData.autonomous_system_number))#organization))
 
-file.close()
 countryReader.close()
 asnReader.close()

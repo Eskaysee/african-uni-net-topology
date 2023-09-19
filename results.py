@@ -172,9 +172,10 @@ f.close()
 os.mkdir("results")
 progress = 0
 for uni in measurements:
-    path = (uni[-2:]).upper()
+    path = countries[(uni[-2:]).upper()]
     print('\n', "uni:", uni, '\n')
-    os.mkdir(f"results/{uni}")
+    os.mkdir(path)
+    os.mkdir(f"{path}/{uni}")
     kwargs = {
         "msm_id": measurements[uni][0]
     }
@@ -196,12 +197,12 @@ for uni in measurements:
 
     executor.shutdown()
 
-    pingf = open(f"result/{uni}/Ping.json", "w")
+    pingf = open(f"{path}/{uni}/Ping.json", "w")
     if is_success1:
         json.dump(pingData, pingf, indent=4)
     pingf.close()
     
-    tracef = open(f"result/{uni}/Traceroute.json", "w")
+    tracef = open(f"{path}/{uni}/Traceroute.json", "w")
     if is_success2:
         json.dump(traceData, tracef, indent=4)
     tracef.close()

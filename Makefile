@@ -1,8 +1,14 @@
-pingTrace:
-	python3 measurements.py
+graphs:
+	python3 visualise.py
 
-results:
+results: measurements.txt
 	python3 results.py
 
-clear:
+pingTrace: hosts
+	python3 measurements.py
+
+hosts:
+	python3 IP_hostReader.py
+
+clean:
 	rm -r results
