@@ -182,9 +182,11 @@ def hopsData():
     for source in country2site:
         for dest in country2site[source]:
             f = open(f"{source}/hopsTo{dest}.csv",'w')
-            f.write("minASPath;maxASPath;minCountryPath;maxCountryPath\n")
+            f.write("destCountry;website;minASPath;maxASPath;minCountryPath;maxCountryPath\n")
             for i in range(0, len(country2site[source][dest])):
                 for site in country2site[source][dest][i]:
+                    f.write(dest+';')
+                    f.write(site+';')
                     f.write(str(country2site[source][dest][i][site]["minASNPath"])+';')
                     f.write(str(country2site[source][dest][i][site]["minASNPath"])+';')
                     f.write(str(country2site[source][dest][i][site]["maxCountryPath"])+';')
