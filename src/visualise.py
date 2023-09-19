@@ -4,7 +4,7 @@ import data, os
 
 countries = {"South Africa": "ZA", "Namibia": "NA", "Malawi": "MW", "Tanzania": "TZ", "Morocco": "MA", "Senegal": "SN", "Cameroon": "CM"}
 
-colours = ['red', 'green', 'blue', 'cyan', 'magenta', 'black']#'yellow', 'white']
+colours = ['red', 'green', 'blue', 'cyan', 'magenta', 'yellow', 'black', 'white']
 
 def pie(source):
     stats = data.generalInter(source)[0]
@@ -16,7 +16,6 @@ def pie(source):
         hops.append(stats[target][-1])
     explode = [0, 0, 0, 0, 0, 0]
     explode[hops.index(max(hops))] = 0.1
-    print(hops)
     plt.pie(hops, labels=labels, colors=colours, autopct=lambda p:f'{int(p/100*sum(hops))}({p: .1f}%)', explode=explode, shadow=True)#, startangle=140)
     plt.title(f'International country hops from {source}')
     plt.savefig(f'{source}/interCountryLevelHops.png', bbox_inches='tight')
@@ -39,7 +38,7 @@ def line(country):
     period = ["Morn(05.30)", "Noon(13:30)", "Eve(21:30)"]
     periodRTT = data.periodRttData(country)
     for nation in [i for i in periodRTT if periodRTT[i] != ([-1]*3)]:
-        plt.plot(period, periodRTT[nation], label=nation, color=colours[i%6], marker=marks[i%6], linestyle=styles[i%4], linewidth=1.5)
+        plt.plot(period, periodRTT[nation], label=nation, color=colours[i%8], marker=marks[i%6], linestyle=styles[i%4], linewidth=1.5)
         i += 1
 
     plt.xlabel("Time of Day"), plt.ylabel("Average RTT(ms)")

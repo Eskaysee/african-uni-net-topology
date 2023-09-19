@@ -169,7 +169,6 @@ def pings(res1):
 f = open("measurements.txt", "r")
 measurements = eval(str(f.read()))
 f.close()
-os.mkdir("results")
 progress = 0
 for uni in measurements:
     path = countries[(uni[-2:]).upper()]
