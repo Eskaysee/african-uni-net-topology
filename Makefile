@@ -16,7 +16,7 @@ cleanPics:
 	rm -r 'South Africa'/*.png Namibia/*.png Tanzania/*.png Morocco/*.png Senegal/*.png Malawi/*.png *.png
 
 cleanCSV:
-	rm -r 'South Africa'/*.csv Namibia/*.csv Tanzania/*.csv Morocco/*.csv Senegal/*.csv Malawi/*.csv *.png
+	rm -r 'South Africa'/*.csv Namibia/*.csv Tanzania/*.csv Morocco/*.csv Senegal/*.csv Malawi/*.csv *.csv
 
 cleanResults:
 	rm -r 'South Africa' Namibia Tanzania Morocco Senegal Malawi
