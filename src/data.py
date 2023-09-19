@@ -181,7 +181,7 @@ def periodRttData(nation):
 def hopsData():
     for source in country2site:
         for dest in country2site[source]:
-            f = open(f"{source}/hopsTo{dest}.csv",'w')
+            f = open(f"{source}/hopsToCountries.csv",'w')
             f.write("destCountry;website;minASPath;maxASPath;minCountryPath;maxCountryPath\n")
             for i in range(0, len(country2site[source][dest])):
                 for site in country2site[source][dest][i]:
