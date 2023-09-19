@@ -16,7 +16,7 @@ def pie(source):
         hops.append(stats[target][-1])
     explode = [0, 0, 0, 0, 0, 0]
     explode[hops.index(max(hops))] = 0.1
-    plt.pie(hops, labels=labels, colors=colours, autopct=lambda p:f'{int(p/100*sum(hops))}({p: .1f}%)', explode=explode, shadow=True)#, startangle=140)
+    plt.pie(hops, labels=labels, colors=colours, autopct=lambda p:f'{int(p/100*sum(hops))}({p: .1f}%)', explode=explode, shadow=True)
     plt.title(f'International country hops from {source}')
     plt.savefig(f'{source}/interCountryLevelHops.png', bbox_inches='tight')
 
@@ -46,9 +46,11 @@ def line(country):
     plt.legend()
     plt.savefig(f'{country}/AverageLatencies.png', bbox_inches='tight')
 
+
+
 data.hopsData()
 bar()
 for nation in countries:
     line(nation)
     pie(nation)
-print("Graphs Generated!")    
+print("Graphs Generated!")

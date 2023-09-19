@@ -11,7 +11,7 @@ def country2target(country, pData, tData):
     mornRTTs, noonRTTs, eveRTTs = [], [], []
     mornAShops, noonAShops, eveAShops = [], [], []
     mornCountHops, noonCountHops, eveCountHops = [], [], []
-    minASNPath, maxASNPath, minCountryPath, maxCountryPath = [], [], [], []
+    AsnPaths, CountryPaths = [], []
     for probe in pData[country]:
         for date in pData[country][probe]:
             if pData[country][probe][date][0] != {}: 
@@ -21,19 +21,8 @@ def country2target(country, pData, tData):
                     mornPLs.append(float(pData[country][probe][date][0]["packet_loss"].split("%")[0]))
                     mornAShops.append(tData[country][probe][date][0]["AS_hops"])
                     mornCountHops.append(tData[country][probe][date][0]["countryHops"])
-                    if (minASNPath == [] and  maxCountryPath == []):
-                        minASNPath = tData[country][probe][date][0]["asn_path"]
-                        maxASNPath = tData[country][probe][date][0]["asn_path"]
-                        minCountryPath = tData[country][probe][date][0]["country_path"]
-                        maxCountryPath = tData[country][probe][date][0]["country_path"] 
-                    elif mornAShops[-1] < len(minASNPath)-1:
-                        minASNPath = tData[country][probe][date][0]["asn_path"]
-                    elif mornAShops[-1] > len(maxASNPath)-1:
-                        maxASNPath = tData[country][probe][date][0]["asn_path"]
-                    if mornCountHops[-1] < len(minCountryPath)-1:
-                        minCountryPath = tData[country][probe][date][0]["country_path"]
-                    elif mornCountHops[-1] > len(maxCountryPath)-1:
-                        maxCountryPath = tData[country][probe][date][0]["country_path"]
+                    AsnPaths.append(tData[country][probe][date][0]["asn_path"])
+                    CountryPaths.append(tData[country][probe][date][0]["country_path"])
 
             if pData[country][probe][date][1] != {}: 
                 if pData[country][probe][date][1]["packet_loss"] != "No Packets Sent":
@@ -42,19 +31,8 @@ def country2target(country, pData, tData):
                     noonPLs.append(float(pData[country][probe][date][1]["packet_loss"].split("%")[0]))
                     noonAShops.append(tData[country][probe][date][1]["AS_hops"])
                     noonCountHops.append(tData[country][probe][date][1]["countryHops"])
-                    if (minASNPath == [] and  maxCountryPath == []):
-                        minASNPath = tData[country][probe][date][1]["asn_path"]
-                        maxASNPath = tData[country][probe][date][1]["asn_path"]
-                        minCountryPath = tData[country][probe][date][1]["country_path"]
-                        maxCountryPath = tData[country][probe][date][1]["country_path"]
-                    elif noonAShops[-1] < len(minASNPath)-1:
-                        minASNPath = tData[country][probe][date][1]["asn_path"]
-                    elif noonAShops[-1] > len(maxASNPath)-1:
-                        maxASNPath = tData[country][probe][date][1]["asn_path"]
-                    if noonCountHops[-1] < len(minCountryPath)-1:
-                        minCountryPath = tData[country][probe][date][1]["country_path"]
-                    elif noonCountHops[-1] > len(maxCountryPath)-1:
-                        maxCountryPath = tData[country][probe][date][1]["country_path"]
+                    AsnPaths.append(tData[country][probe][date][1]["asn_path"])
+                    CountryPaths.append(tData[country][probe][date][1]["country_path"])
             
             if pData[country][probe][date][2] != {}: 
                 if pData[country][probe][date][2]["packet_loss"] != "No Packets Sent":
@@ -63,19 +41,9 @@ def country2target(country, pData, tData):
                     evePLs.append(float(pData[country][probe][date][2]["packet_loss"].split("%")[0]))
                     eveAShops.append(tData[country][probe][date][2]["AS_hops"])
                     eveCountHops.append(tData[country][probe][date][2]["countryHops"])
-                    if (minASNPath == [] and  maxCountryPath == []):
-                        minASNPath = tData[country][probe][date][2]["asn_path"]
-                        maxASNPath = tData[country][probe][date][2]["asn_path"]
-                        minCountryPath = tData[country][probe][date][2]["country_path"]
-                        maxCountryPath = tData[country][probe][date][2]["country_path"]
-                    elif eveAShops[-1] < len(minASNPath)-1:
-                        minASNPath = tData[country][probe][date][2]["asn_path"]
-                    elif eveAShops[-1] > len(maxASNPath)-1:
-                        maxASNPath = tData[country][probe][date][2]["asn_path"]
-                    if eveCountHops[-1] < len(minCountryPath)-1:
-                        minCountryPath = tData[country][probe][date][2]["country_path"]
-                    elif eveCountHops[-1] > len(maxCountryPath)-1:
-                        maxCountryPath = tData[country][probe][date][2]["country_path"]
+                    AsnPaths.append(tData[country][probe][date][2]["asn_path"])
+                    CountryPaths.append(tData[country][probe][date][2]["country_path"])
+            
     mornPL = mean(mornPLs)
     noonPL = mean(noonPLs)
     evePL = mean(evePLs)
@@ -89,8 +57,8 @@ def country2target(country, pData, tData):
     noonCountHop = mean(noonCountHops)
     eveCountHop = mean(eveCountHops)
 
-    hopRTTData = {"avgMornRtt": mornRTT, "avgNoonRtt": noonRTT, "avgEveRtt": eveRTT, "minASNPath": minASNPath, 
-     "maxASNPath": maxASNPath, "minCountryPath": minCountryPath, "maxCountryPath": maxCountryPath}
+    hopRTTData = {"avgMornRtt": mornRTT, "avgNoonRtt": noonRTT, "avgEveRtt": eveRTT, "minASNPath": min(AsnPaths,key=len), 
+     "maxASNPath": max(AsnPaths,key=len), "minCountryPath": min(CountryPaths,key=len), "maxCountryPath": max(CountryPaths,key=len)}
 
     pl = mean([mornPL, noonPL, evePL])
     rtt = mean([mornRTT, noonRTT, eveRTT])
@@ -122,10 +90,10 @@ def results(srcNation, destNation, findings, details):
         country2site[srcNation][destNation].append({uni:hopRttData})
         if srcNation == destNation:
             findings[srcNation].append(arr)
-            details[srcNation].append({uni: [round(i,2) for i in arr]})
+            details[srcNation].append({uni: [round(i,2) for i in arr[:2]]+[round(hop) for hop in arr[2:]]})
         else:
             findings[destNation].append(arr)
-            details[destNation].append({uni: [round(i,2) for i in arr]})
+            details[destNation].append({uni: [round(i,2) for i in arr[:2]]+[round(hop) for hop in arr[2:]]})
     if srcNation == destNation:
         findings[srcNation] = consolidate(findings, srcNation)
     else: findings[destNation] = consolidate(findings, destNation)
@@ -174,21 +142,24 @@ def periodRttData(nation):
                     noonRtt.append(country2site[nation][country][i][uni]["avgNoonRtt"])
                 if country2site[nation][country][i][uni]["avgEveRtt"] != -1:
                     eveRtt.append(country2site[nation][country][i][uni]["avgEveRtt"])
-        periodRTT = [round(mean(mornRtt),2), round(mean(noonRtt),2), round(mean(eveRtt),2)]
+        periodRTT = [mornRtt, noonRtt, eveRtt]
+        periodRTT = [round(mean(rtt),2) for rtt in periodRTT]
         result[country] = periodRTT
     return result
 
 def hopsData():
     for source in country2site:
+        f = open(f"{source}/hopsToCountries.csv",'w')
+        f.write("destCountry;website;PacketLoss;minASPath;maxASPath;minCountryPath;maxCountryPath\n")
         for dest in country2site[source]:
-            f = open(f"{source}/hopsToCountries.csv",'w')
-            f.write("destCountry;website;minASPath;maxASPath;minCountryPath;maxCountryPath\n")
             for i in range(0, len(country2site[source][dest])):
                 for site in country2site[source][dest][i]:
                     f.write(dest+';')
                     f.write(site+';')
+                    if source == dest: f.write(str(a1_deets[source][i][site][0])+';')
+                    else: f.write(str(a2_deets[source][dest][i][site][0])+';')
                     f.write(str(country2site[source][dest][i][site]["minASNPath"])+';')
-                    f.write(str(country2site[source][dest][i][site]["minASNPath"])+';')
-                    f.write(str(country2site[source][dest][i][site]["maxCountryPath"])+';')
+                    f.write(str(country2site[source][dest][i][site]["maxASNPath"])+';')
+                    f.write(str(country2site[source][dest][i][site]["minCountryPath"])+';')
                     f.write(str(country2site[source][dest][i][site]["maxCountryPath"])+'\n')
-            f.close()
+        f.close()
