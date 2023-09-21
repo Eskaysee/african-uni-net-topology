@@ -126,7 +126,9 @@ def generalIntra():
 def generalInter():
     return analysis2, a2_deets
 
-def generalInter(country):
+print(analysis1)
+
+def generalInterFrom(country):
     return analysis2[country], a2_deets[country]
 
 def periodRttData(nation):

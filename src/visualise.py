@@ -7,7 +7,7 @@ countries = {"South Africa": "ZA", "Namibia": "NA", "Malawi": "MW", "Tanzania": 
 colours = ['red', 'green', 'blue', 'cyan', 'magenta', 'yellow', 'black', 'white']
 
 def pie(source):
-    stats = data.generalInter(source)[0]
+    stats = data.generalInterFrom(source)[0]
     labels = list(stats.keys())
     totNationHops = 0
     hops = []
@@ -19,6 +19,7 @@ def pie(source):
     plt.pie(hops, labels=labels, colors=colours, autopct=lambda p:f'{int(p/100*sum(hops))}({p: .1f}%)', explode=explode, shadow=True)
     plt.title(f'International country hops from {source}')
     plt.savefig(f'{source}/interCountryLevelHops.png', bbox_inches='tight')
+    plt.clf()
 
 def bar():
     info = data.generalIntra()[0]
@@ -29,6 +30,7 @@ def bar():
     plt.xlabel("Countries"), plt.ylabel("Ovrl Packet Loss%")
     plt.title("Intranational Packets Lost per Country")
     plt.savefig("intranPacketLoss.png", bbox_inches='tight')
+    plt.clf()
 
 def line(country):
     marks = ['o', 's', '+', 'x', 'D', '*']
@@ -45,8 +47,7 @@ def line(country):
     plt.title("Average Latency per Period per Country")
     plt.legend()
     plt.savefig(f'{country}/AverageLatencies.png', bbox_inches='tight')
-
-
+    plt.clf()
 
 data.hopsData()
 bar()

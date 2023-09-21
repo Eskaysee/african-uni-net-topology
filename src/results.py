@@ -58,46 +58,54 @@ def traces(res2):
         isConnected = False
         asnPath = [probe.asn_v4]
         countryPath = [country]
-        IPs = [probe.address_v4]
+        IPs = []
         for hop in data["result"]:
-            countryData, asnData = "", ""
+            countryData, asnData, ip = "", "", ""
+            packet_rtts = []
             try:
                 for packet in hop["result"]:
                     try:
-                        if (
-                            countryData == "" or asnData == "" 
-                            or asnData == "N/A" or countryData == "N/A"
-                        ):
+                        if countryData == "" and asnData == "":
                             countryData = countryReader.country(packet["from"])
                             asnData = asnReader.asn(packet["from"])
-                            if packet["from"] not in IPs: IPs.append(packet["from"])
+                            ip = packet["from"]
                             if packet["from"] == target: isConnected = True
+                        packet_rtts.append(packet["rtt"])
                     except KeyError:
                         if countryData == "" or asnData == "":
                             asnData = "N/A"
                             countryData = "N/A"
-                        continue
+                        break
                     except geoip2.errors.AddressNotFoundError:
                         if countryData == "" or asnData == "":
                             temp = os.popen(f"geoiplookup {packet['from']}").read().strip().split(", ")
                             if len(temp) == 1:
                                 countryData = "N/A"
-                            else: countryData = temp[1]
-                            asnData = "N/A"
-                        continue
+                                asnData = "N/A"
+                            else: 
+                                ip = packet["from"]
+                                countryData = temp[1]
+                                asnData = "None"
+                        if asnData == "None":
+                            packet_rtts.append(packet["rtt"])
             except KeyError:
                 break
             if (
                 countryData != "N/A" and asnData != "N/A"
-                and countryData != "" and asnData != ""
+                and asnData != "None"
             ): 
+                if (
+                    countryData.country.name != countryPath[-1] or 
+                    asnData.autonomous_system_number != asnPath[-1] 
+                ):
+                    IPs.append({"ip": ip,"asn":asnData.autonomous_system_number,"country":countryData.country.name.strip(),"rtt":meanRTT(packet_rtts)})
                 if asnData.autonomous_system_number != asnPath[-1]: asnPath.append(asnData.autonomous_system_number)
                 if countryData.country.name != countryPath[-1]: countryPath.append((countryData.country.name.strip()))
-            elif countryData == "N/A" and asnData == "N/A":
-                pass
+            elif countryData == "N/A" and asnData == "N/A": continue
             else:
-                if asnData != asnPath[-1] and asnData != "N/A": asnPath.append(asnData)
-                if countryData != countryPath[-1] and type(countryData)==type(""): countryPath.append(countryData)
+                if countryData != countryPath[-1] and type(countryData)==type(""): 
+                    countryPath.append(countryData)
+                    IPs.append({"ip": ip, "asn": "None", "country":countryData,"rtt":meanRTT(packet_rtts)})
         date = str(datetime.fromtimestamp(data["timestamp"]).date())
         mTime = timeOday(data["timestamp"])
         info = {"AS_hops":len(asnPath)-1, "countryHops":len(countryPath)-1, "asn_path": asnPath, "country_path": countryPath, "Connected": isConnected, "IPs:": IPs}
@@ -119,6 +127,7 @@ def traces(res2):
                     traceData[country][probe.id][date][mTime] = info
         measrNo += 1
         print("tm:", measrNo)
+    file.close()
     return traceData
 
 def pings(res1):
@@ -173,8 +182,8 @@ progress = 0
 for uni in measurements:
     path = countries[(uni[-2:]).upper()]
     print('\n', "uni:", uni, '\n')
-    os.mkdir(path)
-    os.mkdir(f"{path}/{uni}")
+    #os.mkdir(path)
+    #os.mkdir(f"{path}/{uni}")
     kwargs = {
         "msm_id": measurements[uni][0]
     }
