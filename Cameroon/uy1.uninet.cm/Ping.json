@@ -1,0 +1,1097 @@
+{
+    "Tanzania": {
+        "19925": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 304.5223248,
+                    "min_RTT": 304.277337,
+                    "max_RTT": 304.78511
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 304.6765706,
+                    "min_RTT": 304.401126,
+                    "max_RTT": 304.988078
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 304.6498706,
+                    "min_RTT": 304.546585,
+                    "max_RTT": 304.795615
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 304.5876445,
+                    "min_RTT": 304.474356,
+                    "max_RTT": 305.28512
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 304.9289025,
+                    "min_RTT": 304.463497,
+                    "max_RTT": 324.880539
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 304.6181672,
+                    "min_RTT": 304.474139,
+                    "max_RTT": 304.849833
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 304.5481114,
+                    "min_RTT": 304.383039,
+                    "max_RTT": 304.75416
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 309.1417026,
+                    "min_RTT": 304.52383,
+                    "max_RTT": 312.723334
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 316.1743685,
+                    "min_RTT": 315.874643,
+                    "max_RTT": 365.696206
+                }
+            ]
+        },
+        "24798": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 295.683897,
+                    "min_RTT": 295.40862,
+                    "max_RTT": 296.120675
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 295.5934575,
+                    "min_RTT": 295.529175,
+                    "max_RTT": 296.52484
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 295.822964,
+                    "min_RTT": 295.545155,
+                    "max_RTT": 296.11621
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 295.623252,
+                    "min_RTT": 295.213945,
+                    "max_RTT": 296.095835
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 303.621552,
+                    "min_RTT": 295.805055,
+                    "max_RTT": 316.493705
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 295.827933,
+                    "min_RTT": 295.594505,
+                    "max_RTT": 296.08955
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 296.12007,
+                    "min_RTT": 295.52012,
+                    "max_RTT": 296.87629
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 293.44037,
+                    "min_RTT": 287.299375,
+                    "max_RTT": 303.7643
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 297.096831,
+                    "min_RTT": 296.698875,
+                    "max_RTT": 297.888625
+                }
+            ]
+        },
+        "20772": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 324.89295375,
+                    "min_RTT": 324.87815,
+                    "max_RTT": 325.14982
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 325.561705,
+                    "min_RTT": 325.333555,
+                    "max_RTT": 325.87313
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 324.36181750000003,
+                    "min_RTT": 324.19964,
+                    "max_RTT": 325.622785
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 325.02126,
+                    "min_RTT": 324.954945,
+                    "max_RTT": 325.57484
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 326.538456,
+                    "min_RTT": 324.90399,
+                    "max_RTT": 329.208355
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 324.399264,
+                    "min_RTT": 324.1248,
+                    "max_RTT": 324.63034
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 324.883056,
+                    "min_RTT": 324.515985,
+                    "max_RTT": 325.277035
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 336.410139,
+                    "min_RTT": 327.27714,
+                    "max_RTT": 344.971185
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 329.285452,
+                    "min_RTT": 329.006885,
+                    "max_RTT": 329.538815
+                }
+            ]
+        }
+    },
+    "Morocco": {
+        "32925": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 183.6154952,
+                    "min_RTT": 183.52251,
+                    "max_RTT": 183.765033
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 183.6893216,
+                    "min_RTT": 183.4594,
+                    "max_RTT": 183.8948
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 183.65579424999999,
+                    "min_RTT": 183.473495,
+                    "max_RTT": 189.949814
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 183.98294875,
+                    "min_RTT": 183.480714,
+                    "max_RTT": 184.080288
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 233.0887822,
+                    "min_RTT": 214.390048,
+                    "max_RTT": 259.734805
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 183.7096264,
+                    "min_RTT": 183.564031,
+                    "max_RTT": 183.80063
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 183.622173,
+                    "min_RTT": 183.509986,
+                    "max_RTT": 183.741823
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 187.7817784,
+                    "min_RTT": 183.696762,
+                    "max_RTT": 195.06531
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 183.4807542,
+                    "min_RTT": 182.174043,
+                    "max_RTT": 184.424386
+                }
+            ]
+        },
+        "12344": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 219.3046948,
+                    "min_RTT": 219.203908,
+                    "max_RTT": 219.444703
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 223.5559198,
+                    "min_RTT": 223.449312,
+                    "max_RTT": 223.654749
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 223.7347304,
+                    "min_RTT": 223.565073,
+                    "max_RTT": 223.933548
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 223.7822844,
+                    "min_RTT": 223.655718,
+                    "max_RTT": 223.959275
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 220.59425075000001,
+                    "min_RTT": 220.362443,
+                    "max_RTT": 222.132788
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 220.3614965,
+                    "min_RTT": 220.323239,
+                    "max_RTT": 220.624964
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 220.06989,
+                    "min_RTT": 220.060339,
+                    "max_RTT": 220.290387
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 220.7530625,
+                    "min_RTT": 220.323417,
+                    "max_RTT": 226.091149
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 220.4180925,
+                    "min_RTT": 220.36182,
+                    "max_RTT": 220.715116
+                }
+            ]
+        },
+        "62159": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 200.6074512,
+                    "min_RTT": 200.513522,
+                    "max_RTT": 200.688819
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 204.64386375,
+                    "min_RTT": 204.467327,
+                    "max_RTT": 205.612315
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 205.4124184,
+                    "min_RTT": 205.138968,
+                    "max_RTT": 205.708143
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 200.3682978,
+                    "min_RTT": 200.069805,
+                    "max_RTT": 200.657141
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 205.04824925,
+                    "min_RTT": 204.858371,
+                    "max_RTT": 206.411319
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 213.232585,
+                    "min_RTT": 206.496489,
+                    "max_RTT": 222.674426
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 205.5386518,
+                    "min_RTT": 205.325127,
+                    "max_RTT": 205.76661
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 206.96585299999998,
+                    "min_RTT": 206.534931,
+                    "max_RTT": 216.797444
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 199.7511492,
+                    "min_RTT": 199.460898,
+                    "max_RTT": 199.979426
+                }
+            ]
+        }
+    },
+    "Namibia": {
+        "14465": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 330.8252972,
+                    "min_RTT": 330.570427,
+                    "max_RTT": 331.032571
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 337.6157395,
+                    "min_RTT": 336.934025,
+                    "max_RTT": 338.397422
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 336.881718,
+                    "min_RTT": 336.469024,
+                    "max_RTT": 337.299312
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 334.3237598,
+                    "min_RTT": 332.51951,
+                    "max_RTT": 336.372201
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 362.0026914,
+                    "min_RTT": 359.785625,
+                    "max_RTT": 365.414586
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 334.862678,
+                    "min_RTT": 334.498489,
+                    "max_RTT": 335.332531
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 332.2190692,
+                    "min_RTT": 330.751026,
+                    "max_RTT": 334.466902
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 376.4860728,
+                    "min_RTT": 360.383082,
+                    "max_RTT": 392.115206
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 337.3563818,
+                    "min_RTT": 337.197632,
+                    "max_RTT": 337.602487
+                }
+            ]
+        },
+        "1000327": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 356.237722,
+                    "min_RTT": 346.415907,
+                    "max_RTT": 361.445518
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 351.1751036,
+                    "min_RTT": 344.133296,
+                    "max_RTT": 357.161648
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 347.4763592,
+                    "min_RTT": 341.685425,
+                    "max_RTT": 358.336519
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 345.58247675,
+                    "min_RTT": 343.186889,
+                    "max_RTT": 363.236704
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 347.176134,
+                    "min_RTT": 342.329203,
+                    "max_RTT": 454.157166
+                },
+                {
+                    "packet_loss": "100.0%",
+                    "average_RTT": -1,
+                    "min_RTT": -1,
+                    "max_RTT": -1
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 346.6651742,
+                    "min_RTT": 340.287982,
+                    "max_RTT": 352.185334
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 349.674844,
+                    "min_RTT": 344.190204,
+                    "max_RTT": 355.669629
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 467.47258775,
+                    "min_RTT": 408.122222,
+                    "max_RTT": 782.591055
+                }
+            ]
+        }
+    },
+    "Malawi": {
+        "19211": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 340.7789902,
+                    "min_RTT": 340.538041,
+                    "max_RTT": 341.256111
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 339.72698049999997,
+                    "min_RTT": 339.673519,
+                    "max_RTT": 340.189972
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 340.0975574,
+                    "min_RTT": 339.940812,
+                    "max_RTT": 340.361184
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 340.8489806,
+                    "min_RTT": 340.673497,
+                    "max_RTT": 341.094052
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 337.5284372,
+                    "min_RTT": 337.192178,
+                    "max_RTT": 337.762543
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 340.5156894,
+                    "min_RTT": 340.308673,
+                    "max_RTT": 340.903852
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 340.8456514,
+                    "min_RTT": 340.720818,
+                    "max_RTT": 341.004953
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 337.2304056,
+                    "min_RTT": 334.78208,
+                    "max_RTT": 340.117143
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 333.79442625,
+                    "min_RTT": 333.715435,
+                    "max_RTT": 334.273841
+                }
+            ]
+        },
+        "1004128": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 366.0273824,
+                    "min_RTT": 365.195294,
+                    "max_RTT": 366.717758
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 366.089068,
+                    "min_RTT": 365.571312,
+                    "max_RTT": 366.396123
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 366.2807278,
+                    "min_RTT": 365.820191,
+                    "max_RTT": 367.108776
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 366.4077958,
+                    "min_RTT": 364.385035,
+                    "max_RTT": 368.932546
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 366.1163506,
+                    "min_RTT": 361.200274,
+                    "max_RTT": 375.593063
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 365.37413125,
+                    "min_RTT": 365.131985,
+                    "max_RTT": 368.982634
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 365.8887568,
+                    "min_RTT": 364.824915,
+                    "max_RTT": 367.432809
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 367.4793035,
+                    "min_RTT": 366.051027,
+                    "max_RTT": 376.414616
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 371.6626382,
+                    "min_RTT": 370.828125,
+                    "max_RTT": 373.27158
+                }
+            ]
+        }
+    },
+    "South Africa": {
+        "25200": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 306.64380766666665,
+                    "min_RTT": 306.264638,
+                    "max_RTT": 327.662249
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 306.918277,
+                    "min_RTT": 306.518036,
+                    "max_RTT": 328.528225
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 306.9359985,
+                    "min_RTT": 306.416267,
+                    "max_RTT": 309.642819
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 307.22440125,
+                    "min_RTT": 306.073086,
+                    "max_RTT": 315.93166
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 307.476518,
+                    "min_RTT": 306.926232,
+                    "max_RTT": 308.354129
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 306.40705825,
+                    "min_RTT": 305.977038,
+                    "max_RTT": 309.85694
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 306.1302424,
+                    "min_RTT": 305.906746,
+                    "max_RTT": 306.446979
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 312.2449812,
+                    "min_RTT": 309.841119,
+                    "max_RTT": 314.598488
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 301.26596075,
+                    "min_RTT": 301.116523,
+                    "max_RTT": 304.07322
+                }
+            ]
+        },
+        "60408": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 285.2101558,
+                    "min_RTT": 284.660232,
+                    "max_RTT": 285.70121
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 301.436979,
+                    "min_RTT": 294.7947,
+                    "max_RTT": 309.130382
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 285.3991652,
+                    "min_RTT": 284.958228,
+                    "max_RTT": 285.742542
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 284.99287400000003,
+                    "min_RTT": 284.532051,
+                    "max_RTT": 367.764681
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 285.378545,
+                    "min_RTT": 285.014287,
+                    "max_RTT": 285.771718
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 285.3317298,
+                    "min_RTT": 284.869734,
+                    "max_RTT": 285.956557
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 269.8072653333333,
+                    "min_RTT": 269.030098,
+                    "max_RTT": 275.67665
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 284.9012532,
+                    "min_RTT": 278.826472,
+                    "max_RTT": 293.834688
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 269.1819356,
+                    "min_RTT": 268.681536,
+                    "max_RTT": 269.771319
+                }
+            ]
+        },
+        "1004024": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 329.3056046,
+                    "min_RTT": 329.197922,
+                    "max_RTT": 329.436541
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 329.248889,
+                    "min_RTT": 329.230049,
+                    "max_RTT": 329.474829
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 329.351932,
+                    "min_RTT": 329.244493,
+                    "max_RTT": 329.466554
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 329.3510812,
+                    "min_RTT": 329.239767,
+                    "max_RTT": 329.416743
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 331.91238020000003,
+                    "min_RTT": 330.563535,
+                    "max_RTT": 334.638886
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 329.9772472,
+                    "min_RTT": 329.856004,
+                    "max_RTT": 330.078068
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 331.2025642,
+                    "min_RTT": 331.110425,
+                    "max_RTT": 331.345068
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 330.4985625,
+                    "min_RTT": 329.97624,
+                    "max_RTT": 340.79786
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 331.3043902,
+                    "min_RTT": 331.194937,
+                    "max_RTT": 331.412658
+                }
+            ]
+        }
+    },
+    "Senegal": {
+        "52931": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 214.85375,
+                    "min_RTT": 214.85375,
+                    "max_RTT": 214.85375
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 233.07447233333335,
+                    "min_RTT": 232.624208,
+                    "max_RTT": 235.246458
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 233.5027082,
+                    "min_RTT": 231.986542,
+                    "max_RTT": 234.756333
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 234.0705666,
+                    "min_RTT": 231.934291,
+                    "max_RTT": 237.548125
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 536.10726075,
+                    "min_RTT": 534.643167,
+                    "max_RTT": 537.226083
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 233.1854168,
+                    "min_RTT": 232.163542,
+                    "max_RTT": 234.712958
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 233.4600668,
+                    "min_RTT": 231.324166,
+                    "max_RTT": 235.021917
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 234.77799966666666,
+                    "min_RTT": 232.838917,
+                    "max_RTT": 235.004625
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 232.25339575,
+                    "min_RTT": 231.500833,
+                    "max_RTT": 236.113792
+                }
+            ]
+        },
+        "22522": {
+            "2023-09-10": [
+                {},
+                {},
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 235.5398438,
+                    "min_RTT": 233.742319,
+                    "max_RTT": 237.808456
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 236.214535,
+                    "min_RTT": 233.702315,
+                    "max_RTT": 238.193406
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 289.0633794,
+                    "min_RTT": 234.466114,
+                    "max_RTT": 355.331861
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 236.2054374,
+                    "min_RTT": 233.976486,
+                    "max_RTT": 238.551716
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 236.2768448,
+                    "min_RTT": 234.120823,
+                    "max_RTT": 238.424679
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 239.97656899999998,
+                    "min_RTT": 235.841247,
+                    "max_RTT": 297.089975
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 236.4715144,
+                    "min_RTT": 233.774569,
+                    "max_RTT": 238.290886
+                }
+            ]
+        }
+    },
+    "Cameroon": {
+        "7050": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 5.485653,
+                    "min_RTT": 5.172562,
+                    "max_RTT": 5.530381
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 5.5690168,
+                    "min_RTT": 5.314431,
+                    "max_RTT": 5.938433
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 5.4189494,
+                    "min_RTT": 5.145192,
+                    "max_RTT": 5.5968
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 5.4448574,
+                    "min_RTT": 5.242186,
+                    "max_RTT": 5.633054
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 5.2838405,
+                    "min_RTT": 5.192512,
+                    "max_RTT": 6.30096
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 106.0807328,
+                    "min_RTT": 42.767113,
+                    "max_RTT": 154.828456
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 106.7515836,
+                    "min_RTT": 81.650153,
+                    "max_RTT": 138.005031
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 8.19361125,
+                    "min_RTT": 5.305912,
+                    "max_RTT": 74.618216
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 139.1472686,
+                    "min_RTT": 130.721445,
+                    "max_RTT": 153.863731
+                }
+            ]
+        },
+        "32597": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 23.1622515,
+                    "min_RTT": 22.967696,
+                    "max_RTT": 26.314485
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 23.6110464,
+                    "min_RTT": 23.107013,
+                    "max_RTT": 24.333492
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 23.017039,
+                    "min_RTT": 22.945012,
+                    "max_RTT": 23.062514
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 23.600467,
+                    "min_RTT": 23.010757,
+                    "max_RTT": 24.336906
+                },
+                {
+                    "packet_loss": "No Packets Sent",
+                    "average_RTT": -1,
+                    "min_RTT": -1,
+                    "max_RTT": -1
+                },
+                {}
+            ]
+        },
+        "1003759": {
+            "2023-09-10": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 48.4540208,
+                    "min_RTT": 47.879093,
+                    "max_RTT": 49.125813
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 48.2918376,
+                    "min_RTT": 47.571639,
+                    "max_RTT": 49.513881
+                },
+                {
+                    "packet_loss": "20.0%",
+                    "average_RTT": 319.86973025,
+                    "min_RTT": 80.635347,
+                    "max_RTT": 730.56032
+                }
+            ],
+            "2023-09-11": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 48.1948214,
+                    "min_RTT": 47.803268,
+                    "max_RTT": 48.675771
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 54.503960500000005,
+                    "min_RTT": 54.285704,
+                    "max_RTT": 59.753692
+                },
+                {
+                    "packet_loss": "100.0%",
+                    "average_RTT": -1,
+                    "min_RTT": -1,
+                    "max_RTT": -1
+                }
+            ],
+            "2023-09-12": [
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 47.892732,
+                    "min_RTT": 47.338872,
+                    "max_RTT": 48.756699
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 47.958929499999996,
+                    "min_RTT": 47.703392,
+                    "max_RTT": 101.830504
+                },
+                {
+                    "packet_loss": "0.0%",
+                    "average_RTT": 48.269542,
+                    "min_RTT": 48.016636,
+                    "max_RTT": 52.595411
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,46 @@
+curl --dump-header - -H "Content-Type: application/json" -H "Accept: application/json" -X POST -d '{
+ "definitions": [
+  {
+   "target": "137.158.159.192",
+   "af": 4,
+   "packets": 5,
+   "size": 48,
+   "description": "Ping measurement to uct.ac.za",
+   "interval": 28800,
+   "resolve_on_probe": true,
+   "skip_dns_check": false,
+   "include_probe_id": true,
+   "type": "ping"
+  },
+  {
+   "target": "137.158.159.192",
+   "af": 4,
+   "response_timeout": 4000,
+   "description": "Traceroute measurement to uct.ac.za",
+   "protocol": "ICMP",
+   "interval": 28800,
+   "resolve_on_probe": true,
+   "packets": 7,
+   "size": 48,
+   "first_hop": 1,
+   "max_hops": 32,
+   "paris": 16,
+   "destination_option_size": 0,
+   "hop_by_hop_option_size": 0,
+   "dont_fragment": false,
+   "skip_dns_check": false,
+   "type": "traceroute"
+  }
+ ],
+ "probes": [
+  {
+   "type": "msm",
+   "value": "59749347",
+   "requested": 21
+  }
+ ],
+ "is_oneoff": false,
+ "bill_to": "sihlecalana@gmail.com",
+ "start_time": 1694323800,
+ "stop_time": 1694556000
+}' https://atlas.ripe.net/api/v2/measurements//?key=ee507b44-4052-4c46-89f6-d8d4b447af4b

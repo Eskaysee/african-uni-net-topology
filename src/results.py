@@ -127,7 +127,6 @@ def traces(res2):
                     traceData[country][probe.id][date][mTime] = info
         measrNo += 1
         print("tm:", measrNo)
-    file.close()
     return traceData
 
 def pings(res1):
